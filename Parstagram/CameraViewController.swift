@@ -14,26 +14,54 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var popupView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        popupView.layer.cornerRadius = 20;
+        popupView.layer.masksToBounds = true; //everything in popupview is changed with it.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     
     @IBAction func onSubmitbutton(_ sender: Any) {
+        let post = PFObject(className: "Posts") // all objects are PFObject. className is table name.
+        //schema: which columns table will have.
+        // parse will read dictionary and automatically create columns for you.
+        post["caption"] = commentField.text!
+        post["author"] = PFUser.current()! // whoever is logged in now.
+
+        // save photos in a separate table:
+        let imageData = imageView.image!.UIImagePNGRepresentation()
+        let file = PFFileObject(data: imageData!)
+
+        post["image"] = file //"image" has URL to file.
+
+        post.saveInBackground{ (success, error) in
+            if success {
+                print("saved!")
+                self.dismiss(animated: true, completion: nil)
+
+            }
+            else{
+                print("error!")
+            }
+    
+    
+        self.dismiss(animated: true, completion: nil)
+    
     }
+    
     
     @IBAction func onCamerabutton(_ sender: Any) {
         let picker = UIImagePickerController();
-        picker.delegate=self; // call function when taking photo is done.
+        picker.delegate = self; // call function when taking photo is done.
         picker.allowsEditing = true; //2nd screen to edit photo.
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){ //check if camera is available
@@ -49,15 +77,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       
+
         let image = info[.editedImage] as! UIImage
-        
-        let size = CGSize(width: 300, height: 300);
-        let scaledImage = image.af_imageScaled(to: size);
-        
-        imageView.image = scaledImage;
-        
-        dismiss(animated: true, completion: nil);
+
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = image.af_imageScaled(to: size)
+
+        imageView.image = scaledImage
+
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -72,5 +100,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
