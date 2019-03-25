@@ -67,15 +67,15 @@
 		5D5B6B8F224304C7003FF8FA /* Parstagram */ = {
 			isa = PBXGroup;
 			children = (
+				5D5B6B94224304C7003FF8FA /* Main.storyboard */,
+				5D5B6B97224304CA003FF8FA /* Assets.xcassets */,
+				5D5B6B99224304CA003FF8FA /* LaunchScreen.storyboard */,
+				5D5B6B9C224304CA003FF8FA /* Info.plist */,
 				5D5B6B90224304C7003FF8FA /* AppDelegate.swift */,
 				5D5B6BA4224308E5003FF8FA /* UIView-Extension.swift */,
 				5DC4E59B22430F23007C93D7 /* LoginViewController.swift */,
 				5D57D74722472237008210E6 /* FeedViewController.swift */,
 				5D57D74B22474231008210E6 /* CameraViewController.swift */,
-				5D5B6B94224304C7003FF8FA /* Main.storyboard */,
-				5D5B6B97224304CA003FF8FA /* Assets.xcassets */,
-				5D5B6B99224304CA003FF8FA /* LaunchScreen.storyboard */,
-				5D5B6B9C224304CA003FF8FA /* Info.plist */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -365,14 +365,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TJWA392KB9;
 				INFOPLIST_FILE = Parstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miyu.Parstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -383,14 +385,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TJWA392KB9;
 				INFOPLIST_FILE = Parstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miyu.Parstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

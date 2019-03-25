@@ -29,6 +29,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     
     
+    @IBAction func onCamerabutton(_ sender: UITapGestureRecognizer) {
+        
+            let picker = UIImagePickerController();
+            picker.delegate = self; // call function when taking photo is done.
+            picker.allowsEditing = true; //2nd screen to edit photo.
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera){ //check if camera is available
+                picker.sourceType = .camera;
+            }
+            else {
+                picker.sourceType = .photoLibrary;
+            }
+            
+            present(picker, animated: true, completion: nil); // Presents a view controller modally.
+        
+    }
     
     @IBAction func onSubmitbutton(_ sender: Any) {
         let post = PFObject(className: "Posts") // all objects are PFObject. className is table name.
@@ -38,7 +54,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         post["author"] = PFUser.current()! // whoever is logged in now.
 
         // save photos in a separate table:
-        let imageData = imageView.image!.UIImagePNGRepresentation()
+        let imageData = imageView.image!.pngData()
         let file = PFFileObject(data: imageData!)
 
         post["image"] = file //"image" has URL to file.
@@ -58,27 +74,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     }
     
-    
-    @IBAction func onCamerabutton(_ sender: Any) {
-        let picker = UIImagePickerController();
-        picker.delegate = self; // call function when taking photo is done.
-        picker.allowsEditing = true; //2nd screen to edit photo.
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera){ //check if camera is available
-            picker.sourceType = .camera;
-        }
-        else {
-            picker.sourceType = .photoLibrary;
-        }
-        
-        present(picker, animated: true, completion: nil); // Presents a view controller modally.
-        
     }
+    
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        let image = info[.editedImage] as! UIImage
+        let image: UIImage = info[.editedImage] as! UIImage
 
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageScaled(to: size)
@@ -100,6 +102,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Pass the selected object to the new view controller.
     }
     */
+    }
 
 
-}
