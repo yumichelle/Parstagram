@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B5B71BCC55449301143940B /* Pods_Parstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFEA6C5989A0F6CBD87B032 /* Pods_Parstagram.framework */; };
+		5D3194C322489A98000E64A9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3194C222489A98000E64A9 /* PostTableViewCell.swift */; };
 		5D57D74822472237008210E6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D57D74722472237008210E6 /* FeedViewController.swift */; };
 		5D57D74C22474231008210E6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D57D74B22474231008210E6 /* CameraViewController.swift */; };
 		5D5B6B91224304C7003FF8FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B6B90224304C7003FF8FA /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		32FC5CB44C92A423A324822D /* Pods-Parstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.debug.xcconfig"; path = "Target Support Files/Pods-Parstagram/Pods-Parstagram.debug.xcconfig"; sourceTree = "<group>"; };
+		5D3194C222489A98000E64A9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5D57D74722472237008210E6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = /Users/ellehcim/Desktop/IOS/Parstagram/Parstagram/FeedViewController.swift; sourceTree = "<absolute>"; };
 		5D57D74B22474231008210E6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5D5B6B8D224304C7003FF8FA /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				5DC4E59B22430F23007C93D7 /* LoginViewController.swift */,
 				5D57D74722472237008210E6 /* FeedViewController.swift */,
 				5D57D74B22474231008210E6 /* CameraViewController.swift */,
+				5D3194C222489A98000E64A9 /* PostTableViewCell.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 				TargetAttributes = {
 					5D5B6B8C224304C7003FF8FA = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -220,6 +224,7 @@
 				5D5B6BA5224308E5003FF8FA /* UIView-Extension.swift in Sources */,
 				5D57D74822472237008210E6 /* FeedViewController.swift in Sources */,
 				5D5B6B91224304C7003FF8FA /* AppDelegate.swift in Sources */,
+				5D3194C322489A98000E64A9 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miyu.Parstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -394,7 +399,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miyu.Parstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
