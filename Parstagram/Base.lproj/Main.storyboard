@@ -34,14 +34,14 @@
                                 <rect key="frame" x="88" y="455.5" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.95086449384689331" green="0.39860689640045166" blue="0.39250588417053223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Ccx-h5-lcC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Ccx-h5-lcC"/>
                                 </constraints>
                                 <state key="normal" title="sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ifF-XG-Y6P"/>
+                                    <action selector="onSignin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rv6-LH-9pM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3f-oO-OSi">
@@ -68,11 +68,11 @@
                                     <constraint firstAttribute="width" secondItem="WQq-S9-sHk" secondAttribute="height" multiplier="30:13" id="ead-y5-c7t"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-HG-SS5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-HG-SS5">
                                 <rect key="frame" x="197" y="455.5" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.9470638632774353" green="0.42790383100509644" blue="0.3831200897693634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="9uY-ed-Yj5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="9uY-ed-Yj5"/>
                                 </constraints>
                                 <state key="normal" title="sign up">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,9 +85,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YDv-HG-SS5" firstAttribute="leading" secondItem="wdB-ww-grP" secondAttribute="trailing" constant="19" id="0S8-ex-Ous"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zIe-B9-eRU" secondAttribute="trailing" constant="88" id="1H1-QE-yqR"/>
                             <constraint firstItem="zIe-B9-eRU" firstAttribute="top" secondItem="BYw-5r-i1q" secondAttribute="bottom" constant="8" id="1Oc-z4-d85"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3f-oO-OSi" secondAttribute="trailing" constant="203" id="3Qb-tC-slA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YDv-HG-SS5" secondAttribute="trailing" constant="88" id="5FG-IM-yVQ"/>
                             <constraint firstItem="61A-YO-p5X" firstAttribute="top" secondItem="M3f-oO-OSi" secondAttribute="bottom" constant="6" id="6Mu-RZ-E8L"/>
                             <constraint firstItem="WQq-S9-sHk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="9FD-hC-zSg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WQq-S9-sHk" secondAttribute="trailing" constant="68" id="Bwq-aI-b2T"/>
@@ -115,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="33"/>
+            <point key="canvasLocation" x="77.599999999999994" y="32.833583208395808"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="8dm-n7-iYQ">
