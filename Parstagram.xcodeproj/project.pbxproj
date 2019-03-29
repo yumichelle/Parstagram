@@ -16,6 +16,7 @@
 		5D5B6B98224304CA003FF8FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5B6B97224304CA003FF8FA /* Assets.xcassets */; };
 		5D5B6B9B224304CA003FF8FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5B6B99224304CA003FF8FA /* LaunchScreen.storyboard */; };
 		5D5B6BA5224308E5003FF8FA /* UIView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B6BA4224308E5003FF8FA /* UIView-Extension.swift */; };
+		5D9EA308224A9F6200AE16C9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9EA307224A9F6200AE16C9 /* CommentCell.swift */; };
 		5DC4E59C22430F23007C93D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4E59B22430F23007C93D7 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5D5B6B9A224304CA003FF8FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D5B6B9C224304CA003FF8FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5B6BA4224308E5003FF8FA /* UIView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Extension.swift"; sourceTree = "<group>"; };
+		5D9EA307224A9F6200AE16C9 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		5DC4E59B22430F23007C93D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98F82C48C7AD806C8239E8AE /* Pods-Parstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.release.xcconfig"; path = "Target Support Files/Pods-Parstagram/Pods-Parstagram.release.xcconfig"; sourceTree = "<group>"; };
 		BCFEA6C5989A0F6CBD87B032 /* Pods_Parstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				5D57D74722472237008210E6 /* FeedViewController.swift */,
 				5D57D74B22474231008210E6 /* CameraViewController.swift */,
 				5D3194C222489A98000E64A9 /* PostTableViewCell.swift */,
+				5D9EA307224A9F6200AE16C9 /* CommentCell.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -205,6 +209,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +230,7 @@
 				5D57D74822472237008210E6 /* FeedViewController.swift in Sources */,
 				5D5B6B91224304C7003FF8FA /* AppDelegate.swift in Sources */,
 				5D3194C322489A98000E64A9 /* PostTableViewCell.swift in Sources */,
+				5D9EA308224A9F6200AE16C9 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TJWA392KB9;
 				INFOPLIST_FILE = Parstagram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TJWA392KB9;
 				INFOPLIST_FILE = Parstagram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
