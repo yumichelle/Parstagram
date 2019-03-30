@@ -42,8 +42,8 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 
             } else {
-                print("error:  \(error!.localizedDescription)");
-                
+                print("error:  \(String(describing: error?.localizedDescription))");
+
             }
         }
 
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
                 print("sign up success")
             }
             else {
-                print("error:  \(error!.localizedDescription)");
+                print("error:  \(String(describing: error?.localizedDescription))");
             }
         }
     }

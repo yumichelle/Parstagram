@@ -148,7 +148,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-w8-6V9">
-                                                    <rect key="frame" x="89.333333333333329" y="251.66666666666663" width="134.66666666666669" height="21"/>
+                                                    <rect key="frame" x="73.666666666666671" y="251.66666666666663" width="134.66666666666663" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -156,8 +156,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Aj3-Jh-cBQ" firstAttribute="top" secondItem="2bs-Yz-7Ou" secondAttribute="top" constant="10" id="1L3-OJ-vO7"/>
-                                                <constraint firstItem="X6n-w8-6V9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lKw-Zb-33k" secondAttribute="trailing" constant="12" id="4Rs-ya-vph"/>
-                                                <constraint firstAttribute="trailing" secondItem="X6n-w8-6V9" secondAttribute="trailing" constant="190" id="6Kw-cr-iKM"/>
+                                                <constraint firstItem="X6n-w8-6V9" firstAttribute="leading" secondItem="lKw-Zb-33k" secondAttribute="trailing" constant="12" id="4Rs-ya-vph"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X6n-w8-6V9" secondAttribute="trailing" constant="190" id="6Kw-cr-iKM"/>
                                                 <constraint firstItem="lKw-Zb-33k" firstAttribute="leading" secondItem="2bs-Yz-7Ou" secondAttribute="leading" constant="10" id="EfR-PY-oOg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Aj3-Jh-cBQ" secondAttribute="trailing" constant="10" id="MYt-wY-sll"/>
                                                 <constraint firstAttribute="bottom" secondItem="lKw-Zb-33k" secondAttribute="bottom" constant="16" id="Udd-qC-dGs"/>

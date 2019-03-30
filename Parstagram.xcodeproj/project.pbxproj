@@ -71,6 +71,8 @@
 		5D5B6B8F224304C7003FF8FA /* Parstagram */ = {
 			isa = PBXGroup;
 			children = (
+				5D57D74722472237008210E6 /* FeedViewController.swift */,
+				5D9EA307224A9F6200AE16C9 /* CommentCell.swift */,
 				5D5B6B94224304C7003FF8FA /* Main.storyboard */,
 				5D5B6B97224304CA003FF8FA /* Assets.xcassets */,
 				5D5B6B99224304CA003FF8FA /* LaunchScreen.storyboard */,
@@ -78,10 +80,8 @@
 				5D5B6B90224304C7003FF8FA /* AppDelegate.swift */,
 				5D5B6BA4224308E5003FF8FA /* UIView-Extension.swift */,
 				5DC4E59B22430F23007C93D7 /* LoginViewController.swift */,
-				5D57D74722472237008210E6 /* FeedViewController.swift */,
 				5D57D74B22474231008210E6 /* CameraViewController.swift */,
 				5D3194C222489A98000E64A9 /* PostTableViewCell.swift */,
-				5D9EA307224A9F6200AE16C9 /* CommentCell.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
