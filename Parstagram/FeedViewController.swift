@@ -17,16 +17,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var showsCommentBar = false;
     var selectedPost: PFObject!
     let commentBar = MessageInputBar();
-    let refreshControl = UIRefreshControl(); // pull to refresh
-    
+    var refreshControl: UIRefreshControl!; // pull to refresh
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        // pull to refresh:
-        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
-        tableView.refreshControl = refreshControl;
         
         commentBar.inputTextView.placeholder = "Add a comment."
         commentBar.sendButton.title = "Post"
@@ -41,7 +37,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let center = NotificationCenter.default
         
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+        
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector(("onRefresh")), for: UIControl.Event.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
+    
     
     @objc func keyboardWillBeHidden(note: Notification) {
         commentBar.inputTextView.text = nil
@@ -49,21 +51,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         becomeFirstResponder();
     }
     
+    
     override var inputAccessoryView: UIView? {
         return commentBar
     }
     override var canBecomeFirstResponder: Bool{
         return showsCommentBar; // don't show commentbar on default
-    }
-    
-    
-    
-    @objc func refreshControlAction() {
-              //Repopulate list.
-            self.tableView.reloadData()
-            
-            //End the refresh
-        self.refreshControl.endRefreshing()
     }
     
     
@@ -152,7 +145,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             return cell;
         }
-        else if indexPath.row < comments.count {
+        else if indexPath.row <= comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
             
             let comment = comments[indexPath.row - 1]
@@ -213,6 +206,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        var results: [MyObjects]?
 //
 //    }
+    
+    
+    
+    @objc func onRefresh() {
+        //        Repopulate list.
+        self.tableView.reloadData()
+        
+        //End the refresh
+        self.refreshControl.endRefreshing()
+    }
     
     
     
