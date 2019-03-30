@@ -1,7 +1,7 @@
 //
 //  CameraViewController.swift
 //  Parstagram
-//
+//  <div>Icons made by <a href="https://www.flaticon.com/authors/zurb" title="Zurb">Zurb</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 //  Created by ellehcim on 3/24/19.
 //  Copyright © 2019 ellehcim. All rights reserved.
 //
@@ -83,13 +83,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image: UIImage = info[.editedImage] as! UIImage
 
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
 
         imageView.image = scaledImage
 
         dismiss(animated: true, completion: nil)
     }
     
+    
+    
+    
+    
+    @IBAction func onCancelButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     
     
