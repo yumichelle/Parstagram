@@ -1,4 +1,13 @@
-Parstagram - Part II
+### To-Do:
+- [ ] User can add a profile picture. (2pts)
+- [ ] Profile pictures are shown for posts and comments. (2pts)
+- [ ] User can pull to refresh. (1pt)
+- [ ] User can load past tweets infinitely. (2pts)
+- [ ] Style the feed to look like the real Instagram feed.
+- [ ] Show the username and creation time for each post
+- [ ] Add a custom camera using the CameraManager library.
+
+# Parstagram - Part II
 
 This is an Instagram clone with a custom Parse backend that allows a user to post photos, view a global photos feed, and add comments!
 
