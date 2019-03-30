@@ -12,17 +12,14 @@ The following **required** functionality is completed:
 - [x] User can log out. (1pt)
 - [x] User can view comments on a post. (3pts)
 - [x] User can add a new comment. (5pts)
-- [x] User can cancel adding a photo.
-- [x] User can hide keyboard when pressing return.
-- [x] When writing a caption, the controller moves up and down with the keyboard.
-
-
-
 
 The following **bonus** features are implemented:
 
 - [ ] User can add a profile picture. (2pts)
 - [ ] Profile pictures are shown for posts and comments. (2pts)
+- [x] User can cancel adding a photo.
+- [x] User can hide keyboard when pressing return.
+- [x] When writing a caption, the controller moves up and down with the keyboard.
 
 ## Video Walkthrough
 
