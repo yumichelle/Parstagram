@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+options: "b43baa5c74fdbd849cea4a4003b7ab8b"
+build_time: [1553973003, 675625000]
+inputs:
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Controls/InputBarButtonItem.swift": [1553904662, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Protocols/InputItem.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Protocols/InputPlugin.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Views/InputStackView.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Views/InputTextView.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/MessageInputBar.swift": [1553904662, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Protocols/MessageInputBarDelegate.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Models/NSConstraintLayoutSet.swift": [1553904662, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Extensions/NSMutableAttributedString+Extensions.swift": [1553904662, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Views/SeparatorLine.swift": [1553904663, 0]
+  "/Users/ellehcim/Desktop/IOS/Parstagram2/Pods/MessageInputBar/Sources/Extensions/UIView+Extensions.swift": [1553904662, 0]
