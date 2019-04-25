@@ -130,9 +130,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
             
-            let user = post["author"] as! PFUser
+            let user = post["author"] as? PFUser
             
-            cell.usernameLabel.text = user.username
+            cell.usernameLabel.text = user?.username
             cell.captionLabel.text = post["caption"] as? String
             
             let imageFile = post["image"] as! PFFileObject
@@ -149,8 +149,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let comment = comments[indexPath.row - 1]
             cell.commentLabel.text = comment["text"] as? String
             
-            let user = comment["author"] as! PFUser
-            cell.nameLabel.text = user.username
+            let user = comment["author"] as? PFUser
+            cell.nameLabel.text = user?.username
             
             return cell;
         }
@@ -222,7 +222,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // parse blueprint
         let main = UIStoryboard(name: "Main", bundle: nil)
         
-        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let loginViewController = main.instantiateViewController(withIdentifier: "LogInViewController")
         // shared per app:
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginViewController
