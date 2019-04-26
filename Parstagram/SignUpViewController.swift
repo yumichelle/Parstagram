@@ -56,7 +56,10 @@ class SignUpViewController: UIViewController {
                 
             } else {
                 // Hooray! Let them use the app now.
-                self.performSegue(withIdentifier: "signupToLogin", sender: nil)
+//                self.performSegue(withIdentifier: "signupToLogin", sender: nil)
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let FeedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController") as UIViewController
+                self.present(FeedNavigationController, animated: true, completion: nil)
                 print("sign up success")
             }
             }
@@ -70,9 +73,12 @@ class SignUpViewController: UIViewController {
             (completed : Bool) -> Void in
             UIView.animate(withDuration: 1.0, delay: 2.0, options: UIView.AnimationOptions.curveLinear, animations: {
                 label.alpha = 0
-            }, completion: {(completed : Bool) -> Void in
-                completed
-            })
+            }, completion: nil
+//                {
+//                (completed : Bool) -> Void in
+//                completed
+//            }
+            )
         })
     }
     

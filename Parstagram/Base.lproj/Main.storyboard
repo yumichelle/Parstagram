@@ -534,7 +534,6 @@
                                 <state key="normal" title="sign up"/>
                                 <connections>
                                     <action selector="signupButton:" destination="sLQ-hy-WBJ" eventType="touchUpInside" id="ayF-hC-Wmi"/>
-                                    <segue destination="w0h-R1-alR" kind="presentation" identifier="signupToLogin" id="wA6-Tv-KU6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ0-4C-cw7">
@@ -547,10 +546,10 @@
                                     <segue destination="Cq9-yU-MQC" kind="presentation" id="cks-cR-Owx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sign up no good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYb-cn-cr5">
-                                <rect key="frame" x="48" y="200" width="124" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sign up no good" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYb-cn-cr5">
+                                <rect key="frame" x="48" y="200" width="319" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -567,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0i7-WF-vnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="-751"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="-751.33928571428567"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="4Fy-4e-a5U">
@@ -618,7 +617,4 @@
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="rp4-sS-gS6"/>
-    </inferredMetricsTieBreakers>
 </document>
