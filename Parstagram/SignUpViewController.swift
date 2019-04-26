@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         messageLabel.alpha = 0
     }
     

@@ -21,9 +21,24 @@ class LogInViewController: UIViewController {
 
        view.setGradient(colorOne: UIColor(red: 94/255.0, green: 10/255.0, blue: 170/255.0, alpha: 0.60), colorTwo: UIColor(red: 215/255.0, green: 25/255.0, blue: 100/255.0, alpha: 0.60), colorThree: UIColor(red: 244/255.0, green: 179/255.0, blue: 55/255.0, alpha: 0.60));
         
+  
+//        usernameTextField.setUpLayer(clearUITextField: usernameTextField)
+//        self.view.addSubview(usernameTextField)
+//        
+//        passwordTextField.backgroundColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha:0.5)
+//        passwordTextField.layer.borderWidth = 2.0
+//        passwordTextField.layer.borderColor = UIColor.white.cgColor
+        usernameTextField.setLeftPaddingPoints(10)
+        usernameTextField.setRightPaddingPoints(10)
+        passwordTextField.setLeftPaddingPoints(10)
+        passwordTextField.setRightPaddingPoints(10)
         
+        //------------------ change placeholder color:
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.attributedPlaceholder?.string ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 215/255.0, green: 25/255.0, blue: 100/255.0, alpha: 1.0)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.attributedPlaceholder?.string ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 215/255.0, green: 25/255.0, blue: 100/255.0, alpha: 1.0)])
+        //------------------
     }
-    
+
 
     @IBAction func loginButton(_ sender: Any) {
         let username = usernameTextField.text!
