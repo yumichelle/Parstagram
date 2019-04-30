@@ -9,6 +9,7 @@ import UIKit
 
 class CommentCell: UITableViewCell {
     
+
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -25,4 +26,5 @@ class CommentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+
 }

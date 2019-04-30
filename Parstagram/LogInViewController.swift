@@ -43,6 +43,7 @@ class LogInViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
+
         
         PFUser.logInWithUsername( inBackground: username, password: password){
             (user, error) in
@@ -50,12 +51,14 @@ class LogInViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("error:  \(String(describing: error?.localizedDescription))");
+
             }
         }
     }
     
     @IBAction func registerButton(_ sender: Any) {
         
+
     }
     
     @IBAction func forgotPasswordButton(_ sender: Any) {

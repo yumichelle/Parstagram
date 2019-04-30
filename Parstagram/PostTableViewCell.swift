@@ -5,6 +5,7 @@
 //  Created by ellehcim on 3/25/19.
 //  Copyright © 2019 ellehcim. All rights reserved.
 //
+
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
@@ -23,4 +24,5 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+
 }

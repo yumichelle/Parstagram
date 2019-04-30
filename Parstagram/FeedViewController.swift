@@ -12,6 +12,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let commentBar = MessageInputBar();
     let refreshControl = UIRefreshControl(); // pull to refresh
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
         tableView.refreshControl = refreshControl;
         
+
         commentBar.inputTextView.placeholder = "Add a comment."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self;
@@ -53,6 +55,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func refreshControlAction() {
         //Repopulate list.
+
         self.tableView.reloadData()
         
         //End the refresh
@@ -206,7 +209,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     //    }
     
     
-    
+  
     /*
      // MARK: - Navigation
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -228,6 +231,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         delegate.window?.rootViewController = loginViewController
         
     }
+
     
     
 }

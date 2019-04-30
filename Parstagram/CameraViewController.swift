@@ -89,7 +89,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
-        
+
         imageView.image = scaledImage
         
         dismiss(animated: true, completion: nil)
@@ -103,6 +103,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         navigationController?.popViewController(animated: true)
         
         dismiss(animated: true, completion: nil)
+
     }
     
     
