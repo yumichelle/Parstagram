@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0DB50FD6725475F0E25EB584893C88F"
-               BuildableName = "Pods_Parstagram.framework"
+               BlueprintIdentifier = "DF0A3B203F7F17AAFA9829B904CD56EA"
+               BuildableName = "Alamofire.framework"
                BlueprintName = "Pods-Parstagram"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0DB50FD6725475F0E25EB584893C88F"
-            BuildableName = "Pods_Parstagram.framework"
+            BlueprintIdentifier = "DF0A3B203F7F17AAFA9829B904CD56EA"
+            BuildableName = "Alamofire.framework"
             BlueprintName = "Pods-Parstagram"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
