@@ -26,17 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     configuration.server = "https://parse-instagram-unit5.herokuapp.com/parse"
                 })
             )
+
         
-        //user stays logged in:
         if PFUser.current() != nil{
-            // user is logged in so...
-            // "Main" for Main.storyboard
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
-
             window?.rootViewController = feedNavigationController
         }
-        
+
         return true
     }
 

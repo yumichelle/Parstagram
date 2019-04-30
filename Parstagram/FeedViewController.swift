@@ -1,10 +1,3 @@
-//
-//  FeedViewController.swift
-//  
-//
-//  Created by ellehcim on 3/23/19.
-//
-
 import UIKit
 import Parse
 import AlamofireImage
@@ -17,13 +10,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var showsCommentBar = false;
     var selectedPost: PFObject!
     let commentBar = MessageInputBar();
-    var refreshControl: UIRefreshControl!; // pull to refresh
+    let refreshControl = UIRefreshControl(); // pull to refresh
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // pull to refresh:
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
+        tableView.refreshControl = refreshControl;
+        
+
         commentBar.inputTextView.placeholder = "Add a comment."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self;
@@ -37,13 +36,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let center = NotificationCenter.default
         
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil);
-        
-        
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector(("onRefresh")), for: UIControl.Event.valueChanged)
-        tableView.insertSubview(refreshControl, at: 0)
     }
-    
     
     @objc func keyboardWillBeHidden(note: Notification) {
         commentBar.inputTextView.text = nil
@@ -51,12 +44,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         becomeFirstResponder();
     }
     
-    
     override var inputAccessoryView: UIView? {
         return commentBar
     }
     override var canBecomeFirstResponder: Bool{
         return showsCommentBar; // don't show commentbar on default
+    }
+    
+    
+    
+    @objc func refreshControlAction() {
+        //Repopulate list.
+
+        self.tableView.reloadData()
+        
+        //End the refresh
+        self.refreshControl.endRefreshing()
     }
     
     
@@ -85,7 +88,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         comment["post"] = selectedPost
         comment["author"] =  PFUser.current()!
         selectedPost.add(comment, forKey: "comments")
-
+        
         selectedPost.saveInBackground{ (success, Error) in
             if success{
                 print("comment saved")
@@ -94,8 +97,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("error saving comment")
             }
         }
-        
-        
         // tableview refresh:
         tableView.reloadData()
         
@@ -122,7 +123,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -131,10 +132,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
-           
-            let user = post["author"] as! PFUser
             
-            cell.usernameLabel.text = user.username
+            let user = post["author"] as? PFUser
+            
+            cell.usernameLabel.text = user?.username
             cell.captionLabel.text = post["caption"] as? String
             
             let imageFile = post["image"] as! PFFileObject
@@ -142,7 +143,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let url = URL(string: urlString)!
             
             cell.photoView.af_setImage(withURL: url)
-
+            
             return cell;
         }
         else if indexPath.row <= comments.count {
@@ -151,8 +152,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let comment = comments[indexPath.row - 1]
             cell.commentLabel.text = comment["text"] as? String
             
-            let user = comment["author"] as! PFUser
-            cell.nameLabel.text = user.username
+            let user = comment["author"] as? PFUser
+            cell.nameLabel.text = user?.username
             
             return cell;
         }
@@ -164,7 +165,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-  
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.section]
         
@@ -182,65 +183,55 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // fake comment:
-//        comment["text"] = "random comment."
-//        comment["post"] = post
-//        comment["author"] =  PFUser.current()!
-//
-//        // "comments" is made up; every posts should have an array of "comments" and add the following above to it.
-//        post.add(comment, forKey: "comments")
-//
-//        post.saveInBackground{ (success, Error) in
-//            if success{
-//                print("comment saved")
-//            }
-//            else {
-//                print("error saving comment")
-//            }
-//        }
+        //        comment["text"] = "random comment."
+        //        comment["post"] = post
+        //        comment["author"] =  PFUser.current()!
+        //
+        //        // "comments" is made up; every posts should have an array of "comments" and add the following above to it.
+        //        post.add(comment, forKey: "comments")
+        //
+        //        post.saveInBackground{ (success, Error) in
+        //            if success{
+        //                print("comment saved")
+        //            }
+        //            else {
+        //                print("error saving comment")
+        //            }
+        //        }
         
     }
     
-
-//    
-//    func loadMorePosts(){
-//        var results: [MyObjects]?
-//
-//    }
+    
+    //
+    //    func loadMorePosts(){
+    //        var results: [MyObjects]?
+    //
+    //    }
     
     
-    
-    @objc func onRefresh() {
-        //        Repopulate list.
-        self.tableView.reloadData()
-        
-        //End the refresh
-        self.refreshControl.endRefreshing()
-    }
-    
-    
-    
+  
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     // switches to log in view controller after logging out
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         // parse blueprint
         let main = UIStoryboard(name: "Main", bundle: nil)
         
-        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let loginViewController = main.instantiateViewController(withIdentifier: "LogInViewController")
         // shared per app:
         let delegate = UIApplication.shared.delegate as! AppDelegate
-         delegate.window?.rootViewController = loginViewController
+        delegate.window?.rootViewController = loginViewController
         
     }
+
     
     
 }
