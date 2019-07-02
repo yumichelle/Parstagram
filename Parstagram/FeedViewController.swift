@@ -220,24 +220,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-//        func loadMorePosts(){
-////            var results: [MyObjects]?
-//            numOfPosts += 20
-//
-//            self.posts.removeAll()
-//
-//            let query = PFQuery(className: "Posts")
-//            query.includeKeys(["author", "comments", "comments.author"])
-//            query.limit = numOfPosts;
-//            query.findObjectsInBackground{ (posts, Error) in
-//                if posts != nil {
-//                    self.posts = posts!
-//                    self.tableView.reloadData();
-//                }
-//            }
-//        }
-    
-    
   
     /*
      // MARK: - Navigation
