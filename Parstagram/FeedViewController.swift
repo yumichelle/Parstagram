@@ -3,9 +3,6 @@ import Parse
 import AlamofireImage
 import MessageInputBar
 
-// https://www.youtube.com/watch?v=JvjEqWHcyIw
-
-
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -63,7 +60,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.posts.removeAll()
         
         let query = PFQuery(className: "Posts")
-        query.includeKeys(["author", "comments", "comments.author", "date", "profilePic.author"])
+        query.includeKeys(["author", "comments", "comments.author", "_created_at", "profilePic.author"])
+        query.order(byDescending: "_created_at")
         query.limit = numOfPosts;
         query.findObjectsInBackground{ (posts, Error) in
             if posts != nil {
@@ -82,7 +80,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(animated); // refresh
         // parse:
         let query = PFQuery(className: "Posts")
-        query.includeKeys(["author", "comments", "comments.author", "date", "profilePic.author"])
+        query.order(byDescending: "_created_at")
+        query.includeKeys(["author", "comments", "comments.author", "_created_at", "profilePic.author"])
         query.limit = numOfPosts;
         query.findObjectsInBackground{ (posts, Error) in
             if posts != nil {
@@ -148,10 +147,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let user = post["author"] as? PFUser
             
-            let now = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy HH:mm"
-            cell.date.text = formatter.string(from: now)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+            let date = dateFormatter.string(from: (post.createdAt as NSDate?)! as Date)
+            
+            cell.date.text = date
             cell.profilePic.layer.cornerRadius = (cell.profilePic.bounds.size.height/2);
             cell.usernameLabel.text = user?.username
             cell.captionLabel.text = post["caption"] as? String
